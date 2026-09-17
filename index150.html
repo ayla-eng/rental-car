@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Search for a Rental Car</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background-image: url('pic/orange-background.jpg');
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .card {
+      background-color: #f1f3f5;
+      width: 100%;
+      max-width: 440px;
+      padding: 28px 24px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      color: #333;
+    }
+
+    .card h2 {
+      font-size: 22px;
+      color: #2b2b2b;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      color: #555;
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+
+    input[type="text"], select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 14px;
+      background-color: #fff;
+      outline: none;
+    }
+
+    input[type="text"]::placeholder {
+      color: #aaa;
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #444;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+
+    .checkbox-group input {
+      accent-color: #333;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+    }
+
+    .dates-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .time-selects {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .features-list {
+      list-style: none;
+      margin: 18px 0;
+    }
+
+    .features-list li {
+      font-size: 13px;
+      color: #333;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .features-list li::before {
+      content: "✓";
+      font-weight: bold;
+      color: #444;
+    }
+
+    .btn-search {
+      width: 100%;
+      background-color: #e65100;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .btn-search:hover {
+      background-color: #bf360c;
+    }
+
+    .info-icon {
+      color: #888;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h2>Search for a rental car</h2>
+
+    <form>
+      <!-- Location Input -->
+      <div class="form-group">
+        <label>Pick up location</label>
+        <input type="text" placeholder="City, airport, region, district...">
+      </div>
+
+      <!-- Deliver checkbox -->
+      <div class="checkbox-group">
+        <input type="checkbox" id="deliver">
+        <label for="deliver" style="margin:0; cursor:pointer;">Deliver the car somewhere else</label>
+      </div>
+
+      <!-- Date & Time Grid -->
+      <div class="dates-grid">
+        <!-- Pick up -->
+        <div class="form-group">
+          <label>Date of pickup</label>
+          <input type="text" value="📅 Sat 26 Mar 2022">
+          <div class="time-selects">
+            <select><option>10</option></select>
+            <select><option>00</option></select>
+          </div>
+        </div>
+
+        <!-- Delivery -->
+        <div class="form-group">
+          <label>Date of delivery</label>
+          <input type="text" value="📅 Tue 29 Mar 2022">
+          <div class="time-selects">
+            <select><option>10</option></select>
+            <select><option>00</option></select>
+          </div>
+        </div>
+      </div>
+
+      <!-- Driver Age Checkbox -->
+      <div class="checkbox-group">
+        <input type="checkbox" id="age" checked>
+        <label for="age" style="margin:0; cursor:pointer;">
+          The driver's age between 30 and 65? <span class="info-icon">ⓘ</span>
+        </label>
+      </div>
+<!-- Features -->
+      <ul class="features-list">
+        <li>No credit card fees</li>
+        <li>No change fees</li>
+        <li>Price match guarantee</li>
+      </ul>
+
+      <!-- Submit Button -->
+      <button type="submit" class="btn-search">Search</button>
+    </form>
+  </div>
+
+</body>
+</html>
